@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { profileSchema } from "../Validations/UserValidations";
 import { useNavigate } from "react-router-dom";
 import { updateUserProfile } from "../Features/UserSlice";
+import * as ENV from "../config.js";
 import axios from "axios";
 
 const Profile = () => {
@@ -30,7 +31,7 @@ const Profile = () => {
     if (!ips) return;
     try {
       const response = await axios.get(
-        `https://geo.ipify.org/api/v2/country?apiKey=at_oMsS9jIM471bFiEdnIwQrX9RRn9gV&ipAddress=${ips}`
+        `https://geo.ipify.org/api/v2/country?apiKey=${ENV.API_KEY}&ipAddress=${ips}`
       );
       setGeoData(response.data);
       console.log("GeoLocation Data:", response.data);
@@ -92,7 +93,8 @@ const Profile = () => {
         <img src={picURL} className="img2" alt="Profile" />
         <div className="profile-details">
           <p>Name: {user.name}</p>
-          <p>Email: {user.email}</p><br></br>
+          <p>Email: {user.email}</p>
+          <br></br>
           {ips ? <p>IP Address: {ips}</p> : <p>Loading IP address...</p>}
           {geoData ? (
             <div>
