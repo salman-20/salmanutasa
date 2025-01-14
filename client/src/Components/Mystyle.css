@@ -466,6 +466,56 @@ a.linklog:hover {
   background-color: rgb(255, 255, 255);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  th,
+  td {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .table-container {
+    max-height: 300px; /* Reduces max height for smaller screens */
+  }
+}
+
+.pagediv {
+  margin-top: 150px;
+}
+
+a.linklog {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 5px;
+}
+
+a.linklog:hover {
+  color: #001d66;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.btn1 {
+  width: 70%;
+  padding: 5%;
+  border-radius: 15px;
+  border-color: #e3954c;
+  color: rgb(255, 255, 255);
+  border: 1px solid black;
+  font-weight: bold;
+  background-color: #001d66;
+  cursor: pointer;
+  margin-bottom: 5%;
+}
+.btn1:hover {
+  transition: ease 0.6s;
+  color: #001d66;
+  background-color: rgb(255, 255, 255);
+}
+
 /* Admin Control Button */
 .buttonA {
   border-radius: 4px;
@@ -667,3 +717,44 @@ a.linklog:hover {
   margin: 5px 0;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .n-item {
+    margin: 10px 0;
+  }
+
+  .register,
+  .input1,
+  .input2,
+  input {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .footer-dark {
+    padding: 30px 0;
+  }
+
+  .footer-dark h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .register {
+    padding: 1.5rem;
+  }
+}
